@@ -4,19 +4,14 @@ import java.util.Arrays;
 
 public class Converter {
     public static int[][] convertInSquareArray(int[][] array) {
-        int counter = (int) Arrays.stream(array).flatMapToInt(Arrays::stream).count();
-        int size = (int) Math.ceil(Math.sqrt(counter));
+        int elements = (int) Arrays.stream(array).flatMapToInt(Arrays::stream).count();
+        int size = (int) Math.ceil(Math.sqrt(elements));
         int[][] rsl = new int[size][size];
-        int row = 0;
-        int column = 0;
+        int counter = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (column == size) {
-                    column = 0;
-                    row++;
-                }
-                rsl[row][column] = array[i][j];
-                column++;
+                rsl[counter / size][counter % size] = array[i][j];
+                counter++;
             }
         }
         return rsl;
