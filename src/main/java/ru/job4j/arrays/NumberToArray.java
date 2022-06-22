@@ -7,9 +7,11 @@ public class NumberToArray {
         System.out.println(Arrays.toString(resolve(12344)));
     }
     public static int[] resolve(int number) {
+        int c = number;
         int[] rsl = new int[Integer.toString(number).length()];
         for (int i = 0; i < rsl.length; i++) {
-            rsl[i] = Integer.parseInt(String.valueOf(String.valueOf(number).charAt(rsl.length - 1 - i)));
+            c = c % 10;
+            rsl[i] = c;
         }
         return rsl;
     }
