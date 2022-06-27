@@ -19,6 +19,7 @@ public class OrArray {
             }
             checker = true;
         }
+
         return Arrays.copyOf(tmp, size);
     }
 }
