@@ -4,15 +4,21 @@ import java.util.Arrays;
 
 public class OrArray {
     public static int[] or(int[] left, int[] right) {
-        if (left.length == 0) {
-            return right;
-        } else if (right.length == 0) {
-            return left;
+        int[] tmp = Arrays.copyOf(left, left.length + right.length);
+        int size = left.length;
+        boolean checker = true;
+        for (int i : right) {
+            for (int t : tmp) {
+                if (i == t) {
+                    checker = false;
+                    break;
+                }
+            }
+            if (checker) {
+                tmp[size++] = i;
+            }
+            checker = true;
         }
-        int[] rsl = Arrays.copyOf(left, left.length + right.length);
-        int count = 0;
-
-
-        return Arrays.copyOf(rsl, count);
+        return Arrays.copyOf(tmp, size);
     }
 }
