@@ -13,5 +13,6 @@ class SymmetricDiffTest {
         assertArrayEquals(new int[] {}, SymmetricDiff.diff(new int[] {1}, new int[] {1}));
         assertArrayEquals(new int[] {1, 3}, SymmetricDiff.diff(new int[] {1, 2}, new int[] {2, 3}));
         assertArrayEquals(new int[] {1, 2, 3, 4}, SymmetricDiff.diff(new int[] {1, 2}, new int[] {3, 4}));
+        assertArrayEquals(new int[] {1, 2, 4}, SymmetricDiff.diff(new int[] {3, 4}, new int[] {1, 2, 3}));
     }
 }
