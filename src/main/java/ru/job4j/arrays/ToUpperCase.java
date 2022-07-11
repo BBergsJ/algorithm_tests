@@ -4,13 +4,20 @@ import java.util.Arrays;
 
 public class ToUpperCase {
     public static char[] onlyLowCase(char[] input) {
-        char[] rsl = new char[input.length];
-        int size = 0;
+//        char[] rsl = new char[input.length];
+//        int size = 0;
+//        for (char c : input) {
+//            if (Character.isLetter(c) && Character.isLowerCase(c)) {
+//                rsl[size++] = Character.toUpperCase(c);
+//            }
+//        }
+//        return Arrays.copyOf(rsl, size);
+        StringBuilder rsl = new StringBuilder();
         for (char c : input) {
             if (Character.isLetter(c) && Character.isLowerCase(c)) {
-                rsl[size++] = Character.toUpperCase(c);
+                rsl.append(Character.toUpperCase(c));
             }
         }
-        return Arrays.copyOf(rsl, size);
+        return rsl.toString().toCharArray();
     }
 }
