@@ -42,4 +42,11 @@ class SubListTest {
         List<String> expected = List.of();
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenEmpty() {
+        List<String> result = SubList.getElementsBetweenIndexes(list, "seventeen");
+        List<String> expected = List.of();
+        assertThat(result, is(expected));
+    }
 }
