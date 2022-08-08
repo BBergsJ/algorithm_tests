@@ -40,7 +40,7 @@ public class ThenComparingMethod {
 
         @Override
         public int compareTo(User o) {
-            return name.compareTo(o.getName());
+            return 0;
         }
     }
 
@@ -49,10 +49,10 @@ public class ThenComparingMethod {
     }
 
     public static Comparator<User> ascByName() {
-        return Comparator.naturalOrder();
+        return Comparator.comparing(User::getName);
     }
 
     public static Comparator<User> descByAge() {
-        return Comparator.reverseOrder();
+        return Comparator.comparing(User::getAge).reversed();
     }
 }
