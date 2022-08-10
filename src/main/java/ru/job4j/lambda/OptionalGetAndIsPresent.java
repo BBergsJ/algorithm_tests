@@ -4,7 +4,8 @@ import java.util.Optional;
 
 public class OptionalGetAndIsPresent {
     public static int get(int[] data, int el) {
-        return indexOf(data, el).isEmpty() ? -1 : indexOf(data, el).get();
+        Optional<Integer> rsl = indexOf(data, el);
+        return rsl.isEmpty() ? -1 : rsl.get();
     }
 
     private static Optional<Integer> indexOf(int[] data, int el) {
