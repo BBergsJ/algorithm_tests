@@ -9,6 +9,11 @@ public class OptionalIfPresent {
     }
 
     private static Optional<Integer> max(int[] data) {
-        return data.length == 0 ? Optional.empty() : Optional.of(Arrays.stream(data).max().getAsInt());
+        //        return data.length == 0 ? Optional.empty() : Optional.of(Arrays.stream(data).max().getAsInt());
+        if (data.length == 0) {
+            return Optional.empty();
+        }
+        Arrays.sort(data);
+        return Optional.of(data[data.length - 1]);
     }
 }
