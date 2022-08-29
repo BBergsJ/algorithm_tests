@@ -12,12 +12,12 @@ public class Task21 {
         for (int i = 0; i < columnCount; i++) {
             for (int j = 0; j < columnCount; j++) {
                 if (i == 0 || i == columnCount - 1) {
-                    System.out.print("*");
+                    System.out.print(star);
                 } else {
                     if (i == j || j == columnCount - 1 - i) {
-                        System.out.print("*");
+                        System.out.print(star);
                     } else if (j < i || j < columnCount - i) {
-                        System.out.print(" ");
+                        System.out.print(space);
                     }
                 }
             }
